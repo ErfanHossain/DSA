@@ -3,8 +3,6 @@
 
 Institute:- Bangladesh University of Business and Technology
 
-Name:-Erfan Hossain
-
 
 Email:- erfanhossain830@gmail.com
 
