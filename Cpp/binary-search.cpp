@@ -1,45 +1,45 @@
 /*
 ->> 2.binary search Algorithm.
 */
-#include <iostream>
+#include<iostream>
 using namespace std;
-int bainarysearch(int a[],int n,int item)
+int Binary_search(int arr[],int str,int end,int item)
 {
-    int first=1;
-    int last=n;
-    while(first<=last){
-        int mid=(first+last)/2;
-    if(a[mid]== item)
-        return mid;
-    else if(a[mid]>item)
+    int mid;
+    while(str<=end){
+    mid=(str+end)/2;
+    if(arr[mid]<item)
     {
-        last=mid-1;
+        str=mid+1;
     }
-    else
-        first=mid+1;
-}
+    else if (arr[mid]>item)
+    {
+        end=mid-1;
+    }
+    else if(arr[mid]==item)
+    return mid;
+    }
     return -1;
+    
+    
 }
-main()
+int main()
 {
     int n;
-    cout<<"Enter index Number for array : ";
+    cout<<"enter element number : ";
     cin>>n;
     int arr[n];
-    cout<<"Enter "<<n<<" Number"<<endl;
-    for(int i=1; i<=n; i++)
+    cout<<"enter "<<n<<" number of arry eliment : ";
+    for(int i=0;i<n;i++)
     {
         cin>>arr[i];
     }
     int item;
-    cout<<"Enter search item : ";
+    cout<<"enter the search item : ";
     cin>>item;
-    int a=bainarysearch(arr,n,item);
-    if(a!=-1){
-        cout<<"item is found at Locetion :"<<a<<endl;
-    }
-
-    if(a==-1)
-        cout<<"item is not found";
-        return 0;
+   int result= Binary_search(arr,0,n-1,item);
+   if(result ==-1)
+   cout<<"item is not founded";
+   else
+   cout<<"item is founded at index"<<result;
 }
